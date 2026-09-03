@@ -4,6 +4,7 @@ import os
 
 app = FastAPI()
 
+
 @app.post("/webhook/send-whatsapp")
 async def send_whatsapp(data: dict):
 
@@ -16,7 +17,7 @@ async def send_whatsapp(data: dict):
 
     message = client.messages.create(
         from_=os.getenv("TWILIO_WHATSAPP_FROM"),
-        to="whatsapp:YOUR_NUMBER",
+        to=os.getenv("TWILIO_WHATSAPP_TO"),
         body=f"🔥 HOT LEAD\n\n{summary}"
     )
 
