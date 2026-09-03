@@ -18,7 +18,7 @@ async def send_whatsapp(data: dict):
     message = client.messages.create(
         from_=os.getenv("TWILIO_WHATSAPP_FROM"),
         to=os.getenv("TWILIO_WHATSAPP_TO"),
-        body=f"🔥 HOT LEAD\n\n{summary}"
+        content_sid="HX7cf5a23fe00549e2ed931e272889fb49"
     )
 
     return {
